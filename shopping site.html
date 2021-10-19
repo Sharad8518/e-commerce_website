@@ -1,0 +1,1003 @@
+<html>
+<head>
+    <title>shopping</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+*{
+margin: 0;
+padding: 0;
+
+}
+body{
+background: linear-gradient(100deg,#FFDAB9,#F08080);
+list-style: none;
+
+
+
+}
+.header1{
+position: absolute;
+margin-top: 10px;
+margin-left: 50px;
+}
+#check{
+display:none;
+
+}
+.header1 h1{
+
+margin-top: 0px;
+margin-left: 50px;
+}
+
+.header1  label{
+
+margin-left:-40px;
+
+}
+.header1 label #btn , label #cancel {
+width:40px;
+height:40px;
+background: #000;
+color:#fff;
+text-align: center;
+line-height: 40px;
+font-size: 20px;
+position:absolute;
+transition:all 0.5s;
+z-index: 10;
+}
+label #cancel{
+visibility: hidden;
+opacity:0;
+
+}
+#check:checked ~ label #btn{
+visibility: hidden;
+opacity:0;
+}
+#check:checked ~ label #cancel{
+visibility:visible;
+opacity:1;
+}
+#check:checked ~ .slidemanu{
+    margin-left:100%;
+
+}
+.header{
+width:100%;
+height:55px;
+background: #f9f6f9;
+
+z-index: 1;
+}
+
+.header ul{
+display:inline-flex;
+text-align: center;
+margin-left: 300px;
+}
+.header  li  {
+    display:inline-flex;
+    list-style: none;
+text-decoration: none;
+text-align: center;
+cursor:pointer;
+margin-top:12px;
+font-size: 20px;
+justify-content: center;
+background: ghostwhite;
+margin-left: 50px;
+}
+.header  li a{
+
+    height:35px;
+margin-top: 8px;
+text-decoration: none;
+font-size: 20px;
+color:black;
+
+}
+
+.header  input{
+    
+width:300px;
+padding-left: 15px;
+height:35px;
+position: relative;
+font-family: Arial, Helvetica, sans-serif;
+outline: none;
+
+border:none;
+border:1px solid pink;
+
+}
+
+
+
+
+
+#text{
+    position:absolute;
+margin:0;
+width:35px;
+height:35px;
+margin-left: 290px;
+font-size: 20px;
+line-height: 35px;
+color:#fff;
+background: linear-gradient(100deg,#FFDAB9,#F08080);
+
+}
+::placeholder{
+font-family: Arial, Helvetica, sans-serif;
+outline: none;
+border:none;
+
+}
+.header2{
+width:100%;
+height:30px;
+background: #f9f9f9;
+margin-top: 10px;
+
+}
+.header2 table{
+
+margin-left: 30px;
+
+}
+.header2 table tr{
+margin-left: 50px;
+
+
+
+}
+.header2 table tr td{
+margin-left: 200px;
+
+
+}
+.header2 table tr td a{
+    width:100%;
+    margin-left: 50px;
+    text-decoration: none;
+    color:#000;
+    
+}
+.header2 table tr td a:hover{
+
+color:hotpink;
+
+}
+.slidemanu{
+background: #efefef;
+position:absolute;
+width:200px;
+margin-left:-100%;
+height:550px;
+z-index: 10;
+box-sizing: border-box;
+transition:all 0.5s ease ;
+}
+.menubox{
+width:100%;
+height: 50px;
+background: linear-gradient(100deg,#FFDAB9,#F08080); 
+
+}
+.menubox p {
+padding-left: 80px;
+padding-top: 30px;
+
+}
+.listbox{
+width:100%;
+height:100%;
+
+}
+.listbox li{
+    cursor:pointer;
+padding-top: 10px;
+padding-left: 15px;
+border-bottom:1px solid black;
+
+}
+.listbox li:hover{
+
+    color:hotpink;
+}
+.brand{
+width:120px;
+height: 310px;
+display: none;
+background: #efefef;
+position: absolute;
+margin-left: 340px;
+z-index: 20;
+box-sizing: border-box;
+box-shadow: 0 10px 10px 0px rgba(0,0,0,0.5);
+}
+.brand span{
+    width:100%;
+display:block;
+justify-content: center;
+text-align: center;
+color:black;
+padding: 10px;
+border-top: 1px solid #000;
+box-sizing: border-box;
+cursor:pointer;
+}
+.brand span a {
+    width: 100%;
+    height: 100%;
+text-decoration: none;
+color:black;
+
+}
+.brand span:hover{
+
+background:linear-gradient(100deg,#FFDAB9,#F08080); 
+
+
+
+}
+
+.imagesslider{
+
+
+position:relative;
+width:70%;
+height: 400px;
+overflow: hidden;
+margin-top: 70px;
+margin-left: 150px;
+border:1px solid black;
+z-index: 1;
+    }
+    .slider{
+   display:flex;
+   width:100%;
+
+
+    }
+    .slider img{
+height:400px;
+width:100%;
+transition: all 0.15s ease;
+
+
+    }
+    .slider input{
+display:none;
+justify-content: center;
+margin:5px;
+
+    }
+.dots{
+display:flex;
+justify-content: center;
+margin:5px;
+
+}
+.dots label{
+height:10px;
+width:10px;
+border-radius:50%;
+border:3px solid #fff;
+cursor:pointer;
+transition:all 0.15s ease;
+margin-top:-40px;
+margin-left:5px;
+}
+.dots label:hover{
+background:#fff;
+
+
+}
+#img1:checked ~ .im1{
+
+margin-left: 0;
+
+
+}
+
+#img1:checked ~ .im2{
+
+margin-left: -100%;
+
+
+}
+
+#img2:checked ~ .im3{
+
+margin-left:-200%;
+
+
+}
+
+#img3:checked ~ .im4{
+
+margin-left: -300%;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.card{
+display:inline-flex;
+margin-left: 30px;
+
+
+}
+.card2 {
+display:inline-flex;
+margin-left: 30px;
+margin-top: -100px;
+}
+.card3{
+    display:inline-flex;
+    margin-left: 30px;
+margin-top: -100px;
+}
+.card4{
+    display:inline-flex;
+    margin-left: 30px;
+margin-top: -100px;
+}
+.card5{
+    display:inline-flex;
+    margin-left: 30px;
+margin-top: -100px;
+}
+
+.content{
+width:200px;
+height:330px;
+
+background:#F5F5F5 ;
+position: relative;
+margin: 100px 15px;
+box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.5);
+transition:all 0.8s;
+}
+.content img{
+width:200px;
+height:210px;
+
+}
+.content h6{
+font-size: 20px;
+margin-top: 10px;
+margin-left: 10px;
+
+
+}
+.content p{
+font-size: 12px;
+padding: 5px;
+}
+.content button{
+border:none;
+width:80px;
+height:40px;
+margin-left:12px; 
+margin-top: 10px;
+background:#7FFFD4 ;
+text-align:center;
+font-weight: bold;
+cursor:pointer;
+
+}
+.box{
+position:absolute;
+top:10px;
+left:10px;
+background:orange;
+width:50px;
+}
+.star{
+background: green;
+width:25px;
+height:25px;
+
+color:#fff;
+font-weight: 500;
+margin-top: -73px;
+margin-left: 80px;
+border-radius: 1px;
+}
+
+
+.content:hover{
+     
+opacity: 1;
+box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.5);
+}
+#box2 {
+
+margin-left: 10px;
+margin-top: 10px;
+font-size: 20px;
+cursor: pointer;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="header1">
+        <input type="checkbox" id="check" >
+
+        <label for="check">
+        <i class="fa fa-bars" aria-hidden="true" id="btn"></i>
+        <i class="fa fa-window-close" aria-hidden="true" id="cancel"></i>
+        
+        </label>
+
+
+
+
+   <h1>Shoes Factory</h1>
+
+
+
+        </div>
+<div class="header">
+    <ul>
+    <li id="box3">Brand</li><i class="fa fa-sort-desc" aria-hidden="true" id="box2"></i>
+<li><input type="text" placeholder="Search"><i class="fa fa-search" aria-hidden="true" id="text"></i></li>
+<li><a href="">Sign out</a></li>
+</ul>
+</div>
+
+<div class="header2">
+<table cellspacing="5">
+<tr>
+    <td><a href="">Normal Shoes</a><td>
+<td><a href="">Sport Shoes</a><td>
+<td><a href="">Leather Shoes</a><td>
+<td><a href="">Run Shoes</a><td>
+<td><a href="">Climb Sheos</a><td>
+<td><a href="">Slipper</a><td>
+<td><a href="">Sandel</a><td>
+
+
+
+    </tr>
+
+</table>
+    </div>
+<div class="brand" id=
+"brand">
+<span><a href="">NIKE</a></span>
+<span><a href="">ADIDAS</a></span>
+<span><a href="">CLARKS</a></span>
+<span><a href="">WOODLAND</a></span>
+<span><a href="">PUMA</a></span>
+<span><a href="">REEBOK</a></span>
+<span><a href="">RED CHIEF</a></span>
+<span><a href="">FILA</a></span>
+
+</div>
+
+     <div class="slidemanu" id="slidemanu">
+     <div class="menubox">
+            
+       </div>
+        <div class="listbox">
+        <ul>
+        <li>Shoes Factory</li>
+        
+        <li>All Categories</li>
+        
+        <li>Choose Language</li>
+        
+        <li>Offer Zone</li>
+        
+        <li>Sell on Shoes Factory</li>
+        
+        <li>My Orders</li>
+        
+        <li>My Cart</li>
+        <li>My Wishlist</li>
+        <li>My Account</li>
+        <li>My Notification</li>
+        <li>My Chats</li>
+        </ul>
+        <div class="listbox2">
+        <ul>
+        <li>Notifaction Preferences</li>
+            <li>Help Center</li>
+            <li>Privacy Policy</li>
+            <li>Legal</li>
+            
+            
+        </ul>
+        </div>
+        </div>
+    </div>
+
+
+    <div class="imagesslider">
+        <div class="slider">
+        <input type="radio" name="slider" id="img1">
+        <input type="radio" name="slider" id="img2">
+        <input type="radio" name="slider" id="img3">
+        <input type="radio" name="slider" id="img4">
+        
+        
+        
+        <img src="images/backgroundpic1.jpeg" class="im1">
+        <img src="images/backgroundpic2.jpeg"class="im2">
+        <img src="images/backgroundpic3.jpeg" class="im3">
+        <img src="images/backgroundpic5.jpeg"class="im4">
+          </div>
+          <div class="dots"> 
+        <label for="img1"></label>
+        <label for="img2"></label>
+        <label for="img3"></label>
+        <label for="img4"></label>
+        
+        
+        
+        
+          </div> 
+        </div>
+
+
+
+
+    <div class="card">
+<div class ="content">
+    <div class="main">
+<img src="images/shoes1.jpeg">
+<div class="box">
+<p style="font-size:16px; font-weight:bold;" >SALE</p>
+</div>
+</div>
+<p>This shoes it is very comfort for run</p>
+<h6>Rs.2000</h6>
+<button>Buy</button>
+
+<button>Add card</button>
+
+
+
+<div class="star">
+    <p>5.2</p><i class=fa-fa-star></i>
+
+       </div>
+
+</div>
+
+<div class ="content">
+    <div class="main">
+<img src="images/shoes2.jpeg">
+<div class="box">
+<p style="font-size:16px; font-weight:bold;" >SALE</p>
+</div>
+</div>
+<p>This shoes it is very comfort for run</p>
+<h6>Rs.1400</h6>
+<button>Buy</button>
+<button>Add card</button>
+
+
+<div class="star">
+    <p>5.7</p><i class=fa-fa_star></i>
+
+       </div>
+
+</div>
+
+<div class ="content">
+    <div class="main">
+<img src="images/shoes3.jpeg">
+<div class="box">
+<p style="font-size:16px; font-weight:bold;" >SALE</p>
+</div>
+</div>
+<p>This shoes it is very comfort for run</p>
+<h6>Rs.1200</h6>
+<button>Buy</button>
+<button>Add card</button>
+<div class="star">
+    <p>3.7</p><i class=fa-fa_star></i>
+
+       </div>
+</div>
+
+<div class ="content">
+    <div class="main">
+<img src="images/shoes1.jpeg">
+<div class="box">
+<p style="font-size:16px; font-weight:bold;" >SALE</p>
+</div>
+</div>
+<p>This shoes it is very comfort for run</p>
+<h6>Rs.2000</h6>
+<button>Buy</button>
+<button>Add card</button>
+<div class="star">
+    <p>6.3</p><i class=fa-fa_star></i>
+
+       </div>
+
+
+</div>
+</div>
+<div class="card2">
+<div class ="content">
+    <div class="main">
+<img src="images/sandel1.png">
+<div class="box">
+<p style="font-size:16px; font-weight:bold;" >SALE</p>
+</div>
+</div>
+<p>This shoes it is very comfort for run</p>
+<h6>Rs.500</h6>
+<button>Buy</button>
+
+<button>Add card</button>
+<div class="star">
+    <p>3.7</p><i class=fa-fa_star></i>
+
+       </div>
+
+
+</div>
+
+<div class ="content">
+    <div class="main">
+<img src="images/sandel2.png">
+<div class="box">
+<p style="font-size:16px; font-weight:bold;" >SALE</p>
+</div>
+</div>
+<p>This shoes it is very comfort for run</p>
+<h6>Rs.550</h6>
+<button>Buy</button>
+
+<button>Add card</button>
+<div class="star">
+    <p>4.2</p><i class=fa-fa_star></i>
+
+       </div>
+
+</div>
+
+<div class ="content">
+    <div class="main">
+<img src="images/sandel3.png">
+<div class="box">
+<p style="font-size:16px; font-weight:bold;" >SALE</p>
+</div>
+</div>
+<p>This shoes it is very comfort for run</p>
+<h6>Rs.650</h6>
+<button>Buy</button>
+
+<button>Add card</button>
+<div class="star">
+    <p>6.5</p><i class=fa-fa_star></i>
+
+       </div>
+
+</div>
+<div class ="content">
+    <div class="main">
+<img src="images/sandel4.png">
+<div class="box">
+<p style="font-size:16px; font-weight:bold;" >SALE</p>
+</div>
+</div>
+<p>This shoes it is very comfort for run</p>
+<h6>Rs.600</h6>
+<button>Buy</button>
+
+<button>Add card</button>
+<div class="star">
+    <p>2.7</p><i class=fa-fa_star></i>
+
+       </div>
+
+
+</div>
+
+</div>
+<div class="card3">
+    <div class ="content">
+        <div class="main">
+    <img src="images/slipper1.png">
+    <div class="box">
+    <p style="font-size:16px; font-weight:bold;" >SALE</p>
+    </div>
+    </div>
+    <p>This shoes it is very comfort for run</p>
+    <h6>Rs.300</h6>
+    <button>Buy</button>
+
+    <button>Add card</button>
+    <div class="star">
+        <p>3.5</p><i class=fa-fa_star></i>
+
+           </div>
+
+
+    </div>
+
+    <div class ="content">
+        <div class="main">
+    <img src="images/slipper2.png">
+    <div class="box">
+    <p style="font-size:16px; font-weight:bold;" >SALE</p>
+    </div>
+    </div>
+    <p>This shoes it is very comfort for run</p>
+    <h6>Rs.350</h6>
+    <button>Buy</button>
+
+    <button>Add card</button>
+    <div class="star">
+        <p>4.8</p><i class=fa-fa_star></i>
+
+           </div>
+
+
+
+    </div>
+
+    <div class ="content">
+        <div class="main">
+    <img src="images/slipper3.png">
+    <div class="box">
+    <p style="font-size:16px; font-weight:bold;" >SALE</p>
+    </div>
+    </div>
+    <p>This shoes it is very comfort for run</p>
+    <h6>Rs.299</h6>
+    <button>Buy</button>
+    <button>Add card</button>
+    <div class="star">
+        <p>4.9</p><i class=fa-fa_star></i>
+
+           </div>
+
+
+    </div>
+
+    <div class ="content">
+        <div class="main">
+    <img src="images/slipper4.png">
+    <div class="box">
+    <p style="font-size:16px; font-weight:bold;" >SALE</p>
+    </div>
+    </div>
+    <p>This shoes it is very comfort for run</p>
+    <h6>Rs.325</h6>
+    <button>Buy</button>
+
+    <button>Add card</button>
+    <div class="star">
+        <p>7.7</p><i class=fa-fa_star></i>
+
+           </div>
+
+
+    </div>
+</div>
+
+
+<div class="card3">
+    <div class ="content">
+        <div class="main">
+    <img src="images/leathershoes.png">
+    <div class="box">
+    <p style="font-size:16px; font-weight:bold;" >SALE</p>
+    </div>
+    </div>
+    <p>This shoes it is very comfort for run</p>
+    <h6>Rs.325</h6>
+    <button>Buy</button>
+
+    <button>Add card</button>
+    <div class="star">
+        <p>2.3</p><i class=fa-fa_star></i>
+
+           </div>
+
+
+    </div>
+
+    <div class ="content">
+        <div class="main">
+    <img src="images/leathershoes2.png">
+    <div class="box">
+    <p style="font-size:16px; font-weight:bold;" >SALE</p>
+    </div>
+    </div>
+    <p>This shoes it is very comfort for run</p>
+    <h6>Rs.325</h6>
+    <button>Buy</button>
+
+    <button>Add card</button>
+    <div class="star">
+        <p>3.7</p><i class=fa-fa_star></i>
+
+           </div>
+
+
+    </div>
+
+
+    <div class ="content">
+        <div class="main">
+    <img src="images/leathershoes3.png">
+    <div class="box">
+    <p style="font-size:16px; font-weight:bold;" >SALE</p>
+    </div>
+    </div>
+    <p>This shoes it is very comfort for run</p>
+    <h6>Rs.325</h6>
+    <button>Buy</button>
+    <button>Add card</button>
+    <div class="star">
+        <p>4.9</p><i class=fa-fa_star></i>
+
+           </div>
+
+
+
+    </div>
+
+    <div class ="content">
+        <div class="main">
+    <img src="images/leathershoes4.png">
+    <div class="box">
+    <p style="font-size:16px; font-weight:bold;" >SALE</p>
+    </div>
+    </div>
+    <p>This shoes it is very comfort for run</p>
+    <h6>Rs.325</h6>
+    <button>Buy</button>
+
+    <button>Add card</button>
+    <div class="star">
+        <p>6.6</p><i class=fa-fa_star></i>
+
+           </div>
+
+
+    </div>
+
+    </div>
+    <div class="card4">
+        <div class ="content">
+            <div class="main">
+        <img src="images/sportshoes1.png">
+        <div class="box">
+        <p style="font-size:16px; font-weight:bold;" >SALE</p>
+        </div>
+        </div>
+        <p>This shoes it is very comfort for run</p>
+        <h6>Rs.1200</h6>
+        <button>Buy</button>
+
+        <button>Add card</button>
+        <div class="star">
+            <p>6.3</p><i class=fa-fa_star></i>
+   
+               </div>
+
+        </div>
+
+
+        <div class ="content">
+            <div class="main">
+        <img src="images/sportshoes2.png">
+        <div class="box">
+        <p style="font-size:16px; font-weight:bold;" >SALE</p>
+        </div>
+        </div>
+        <p>This shoes it is very comfort for run</p>
+        <h6>Rs.1100</h6>
+        <button>Buy</button>
+        <button>Add card</button>
+        <div class="star">
+            <p>1.7</p><i class=fa-fa_star></i>
+   
+               </div>
+
+
+        </div>
+
+
+        <div class ="content">
+            <div class="main">
+        <img src="images/sportshoes3.png">
+        <div class="box">
+        <p style="font-size:16px; font-weight:bold;" >SALE</p>
+        </div>
+        </div>
+        <p>This shoes it is very comfort for run</p>
+        <h6>Rs.825</h6>
+        <button>Buy</button>
+
+        <button>Add card</button>
+
+        <div class="star">
+            <p>4.1</p><i class=fa-fa_star></i>
+   
+               </div>
+
+
+        </div>
+
+
+        <div class ="content">
+            <div class="main">
+        <img src="images/sportshoes4.png">
+        <div class="box">
+        <p style="font-size:16px; font-weight:bold;" >SALE</p>
+        </div>
+        </div>
+        <p>This shoes it is very comfort for run</p>
+        <h6>Rs.900</h6>
+        <button>Buy</button>
+        <button>Add card</button>
+
+        <div class="star">
+         <p>4.7</p><i class=fa-fa_star></i>
+
+            </div>
+        </div>
+        </div>
+
+
+        <script src="js/jquery.js"></script>
+       <script>
+        $(document).ready(function(){
+        $('#btn').click(function(){
+        $('#slidemanu').css('marginLeft','0');
+
+
+        });
+        $('#cancel').click(function(){
+        $('#slidemanu').css('marginLeft','-100%');
+
+
+        });
+
+        $('#box2').click(function(){
+        $('#brand').css('display','block');
+
+        });
+
+        $('#box3').click(function(){
+        $('#brand').css('display','none');
+
+        });
+
+
+    });
+      </script>
+</body>
+
+
+
+
+
+</html>
